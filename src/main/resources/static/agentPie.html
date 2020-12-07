@@ -16,7 +16,6 @@
     axios.get("/agent/count").then(function (resp) {
         var myChart = echarts.init(document.getElementById("main"));
         var data = resp.data;
-        console.log(data);
         // 指定图表的配置项和数据
         var option = {
             backgroundColor: '#2c343c',
@@ -37,8 +36,12 @@
 
             visualMap: {
                 show: false,
-                min: 0,
-                max: 1000,
+                min: Math.min.apply(Math, data.map(function (o) {
+                    return o.value
+                })),
+                max: Math.max.apply(Math, data.map(function (o) {
+                    return o.value
+                })),
                 inRange: {
                     colorLightness: [0, 1]
                 }

@@ -26,5 +26,6 @@ public class CityController {
         for (CityCounts cityCount : cityCounts) {
             vos.add(new Vo(cityCount.getCity(), cityCount.getCount()));
         }
+        return vos;
     }
 }

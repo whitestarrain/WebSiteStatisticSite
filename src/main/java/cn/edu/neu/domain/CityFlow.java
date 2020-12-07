@@ -7,7 +7,7 @@ public class CityFlow {
     private int id;
     private int num;
     private String city;
-    private double sum_flow;
+    private double sumFlow;
 
     @Override
     public String toString() {
@@ -15,7 +15,7 @@ public class CityFlow {
                 "id=" + id +
                 ", num=" + num +
                 ", city='" + city + '\'' +
-                ", sum_flow=" + sum_flow +
+                ", sum_flow=" + sumFlow +
                 '}';
     }
 
@@ -43,11 +43,11 @@ public class CityFlow {
         this.city = city;
     }
 
-    public double getSum_flow() {
-        return sum_flow;
+    public double getSumFlow() {
+        return sumFlow;
     }
 
-    public void setSum_flow(double sum_flow) {
-        this.sum_flow = sum_flow;
+    public void setSumFlow(double sumFlow) {
+        this.sumFlow = sumFlow;
     }
 }

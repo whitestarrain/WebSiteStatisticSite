@@ -3,7 +3,7 @@ package cn.edu.neu.domain;
 /**
  * @author liyu
  */
-public class UserType {
+public class User {
     private int id;
     private int num;
     private int userId;
