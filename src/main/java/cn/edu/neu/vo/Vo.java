@@ -3,11 +3,11 @@ package cn.edu.neu.vo;
 /**
  * @author liyu
  */
-public class AgentCountPie {
+public class Vo {
     private String name;
     private int value;
 
-    public AgentCountPie(String name, int value) {
+    public Vo(String name, int value) {
         this.name = name;
         this.value = value;
     }

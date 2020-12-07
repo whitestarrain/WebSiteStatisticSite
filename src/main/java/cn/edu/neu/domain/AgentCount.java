@@ -6,7 +6,7 @@ package cn.edu.neu.domain;
 public class AgentCount {
 
     private int id;
-    private int sum;
+    private int num;
     private String agent;
     private int count;
 
@@ -14,7 +14,7 @@ public class AgentCount {
     public String toString() {
         return "AgentCount{" +
                 "id=" + id +
-                ", sum=" + sum +
+                ", sum=" + num +
                 ", agent='" + agent + '\'' +
                 ", count=" + count +
                 '}';
@@ -28,12 +28,12 @@ public class AgentCount {
         this.id = id;
     }
 
-    public int getSum() {
-        return sum;
+    public int getNum() {
+        return num;
     }
 
-    public void setSum(int sum) {
-        this.sum = sum;
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public int getCount() {

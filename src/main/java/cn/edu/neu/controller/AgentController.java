@@ -2,7 +2,7 @@ package cn.edu.neu.controller;
 
 import cn.edu.neu.mapper.AgentMapper;
 import cn.edu.neu.domain.AgentCount;
-import cn.edu.neu.vo.AgentCountPie;
+import cn.edu.neu.vo.Vo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,12 +20,12 @@ public class AgentController {
     AgentMapper mapper;
 
     @RequestMapping("/count")
-    public List<AgentCountPie> getCount() {
+    public List<Vo> getCount() {
         List<AgentCount> nowAgentCount = mapper.getNowAgentCount();
-        List<AgentCountPie> agentCountPies = new ArrayList<AgentCountPie>();
+        List<Vo> voList = new ArrayList<Vo>();
         for (AgentCount agentCount : nowAgentCount) {
-            agentCountPies.add(new AgentCountPie(agentCount.getAgent(), agentCount.getSum()));
+            voList.add(new Vo(agentCount.getAgent(), agentCount.getCount()));
         }
-        return agentCountPies;
+        return voList;
     }
 }
