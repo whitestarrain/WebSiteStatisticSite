@@ -5,43 +5,42 @@ package cn.edu.neu.domain;
  */
 public class AgentCount {
 
-    private int id;
-    private int num;
+    private Integer id;
+    private Integer num;
     private String agent;
-    private int count;
+    private Integer count;
 
     @Override
     public String toString() {
         return "AgentCount{" +
                 "id=" + id +
-                ", sum=" + num +
+                ", num=" + num +
                 ", agent='" + agent + '\'' +
                 ", count=" + count +
                 '}';
     }
 
-    public int getId() {
+    public AgentCount(Integer id, Integer num, String agent, Integer count) {
+        this.id = id;
+        this.num = num;
+        this.agent = agent;
+        this.count = count;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getNum() {
+    public Integer getNum() {
         return num;
     }
 
-    public void setNum(int num) {
+    public void setNum(Integer num) {
         this.num = num;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
     }
 
     public String getAgent() {
@@ -50,5 +49,13 @@ public class AgentCount {
 
     public void setAgent(String agent) {
         this.agent = agent;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 }

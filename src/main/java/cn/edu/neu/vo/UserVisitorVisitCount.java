@@ -1,13 +1,30 @@
-package cn.edu.neu.domain;
+package cn.edu.neu.vo;
 
 /**
  * @author liyu
  */
 public class UserVisitorVisitCount {
-    private int id;
-    private int num;
-    private int userCount;
-    private int visitorCount;
+    private Integer id;
+    private Integer num;
+    private Integer userCount;
+    private Integer visitorCount;
+    private String date;
+
+    public UserVisitorVisitCount(String date, Integer userCount, Integer visitorCount) {
+        this.userCount = userCount;
+        this.visitorCount = visitorCount;
+        this.date = date;
+        this.id = 0;
+        this.num = 0;
+    }
+
+    public UserVisitorVisitCount(Integer id, Integer num, Integer userCount, Integer visitorCount, String date) {
+        this.id = id;
+        this.num = num;
+        this.userCount = userCount;
+        this.visitorCount = visitorCount;
+        this.date = date;
+    }
 
     public UserVisitorVisitCount(Integer id, Integer num, Integer userCount, Integer visitorCount) {
         this.id = id;
@@ -23,7 +40,16 @@ public class UserVisitorVisitCount {
                 ", num=" + num +
                 ", userCount=" + userCount +
                 ", visitorCount=" + visitorCount +
+                ", date='" + date + '\'' +
                 '}';
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getId() {

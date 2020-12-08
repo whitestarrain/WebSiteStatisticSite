@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.neu.mapper.FlowMapper">
+    <select id="getFlowCountVar" resultType="cn.edu.neu.vo.FlowCountVar">
+        SELECT
+          DATE_FORMAT(createtime, '%Y-%m-%d') date,
+          t1.sum sumCount
+        FROM
+          num_table
+          JOIN
+            (SELECT
+              num,
+              ROUND(SUM(sumFlow), 3) SUM
+            FROM
+              flow_distribution
+            GROUP BY num) t1
+            ON num_table.id = t1.num
+    </select>
+</mapper>

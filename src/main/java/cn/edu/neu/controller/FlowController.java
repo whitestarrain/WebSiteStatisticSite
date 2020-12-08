@@ -2,6 +2,7 @@ package cn.edu.neu.controller;
 
 import cn.edu.neu.domain.CityFlow;
 import cn.edu.neu.mapper.FlowMapper;
+import cn.edu.neu.vo.FlowCountVar;
 import cn.edu.neu.vo.Vo;
 import jdk.nashorn.internal.ir.ReturnNode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,11 @@ public class FlowController {
     public Vo[] getCityMapper() {
         List<CityFlow> cityFlow = mapper.getCityFlow();
         return cityFlow.stream().map(c -> new Vo(c.getCity(), c.getSumFlow() * 1024)).toArray(Vo[]::new);
+    }
+
+    @RequestMapping("/countVar")
+    public List<FlowCountVar> getFlowCountVar() {
+        List<FlowCountVar> flowCountVar = mapper.getFlowCountVar();
+        return flowCountVar;
     }
 }

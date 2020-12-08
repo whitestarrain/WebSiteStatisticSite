@@ -1,9 +1,9 @@
 package cn.edu.neu.controller;
 
-import cn.edu.neu.domain.UserVisitorVisitCount;
+import cn.edu.neu.vo.OldUserNewUserVar;
+import cn.edu.neu.vo.UserVisitorVisitCount;
 import cn.edu.neu.mapper.UserMapper;
 import cn.edu.neu.vo.Vo;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,4 +33,14 @@ public class UserController {
         return new Vo[]{new Vo("用户", uv.getUserCount()), new Vo("游客", uv.getVisitorCount())};
     }
 
+    @RequestMapping("/UVCountVar")
+    public List<UserVisitorVisitCount> getUVCountVar() {
+        List<UserVisitorVisitCount> userVisitorsVisitCountVar = mapper.getUserVisitorsVisitCountVar();
+        return userVisitorsVisitCountVar;
+    }
+
+    @RequestMapping("/ONCountVar")
+    public List<OldUserNewUserVar> getOldUserNewUserVar() {
+        return mapper.getOldUserNewUserVar();
+    }
 }

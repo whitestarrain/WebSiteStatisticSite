@@ -57,13 +57,13 @@ function toRequestCountVar() {
 
 function toOldUserRatio() {
     $("#rightcontent").prop({
-        src: "./OldUserRatio.html",
+        src: "./oldNewUserVar.html",
     });
 }
 
-function toUserCountVar() {
+function toFLowCountVar() {
     $("#rightcontent").prop({
-        src: "./userCountVar.html",
+        src: "./flowCountVar.html",
     });
 }
 

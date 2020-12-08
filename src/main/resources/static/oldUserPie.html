@@ -11,10 +11,12 @@
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div id="main" style="width: 900px; height: 700px"></div>
 <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById("main"));
+    myChart.showLoading()
     axios.get("/user/type").then(function (resp) {
+        myChart.hideLoading();
         data = resp.data
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById("main"));
 
         // 指定图表的配置项和数据
         var option = {

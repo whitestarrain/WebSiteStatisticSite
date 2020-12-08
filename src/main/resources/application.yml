@@ -2,8 +2,8 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/logs_static_result?serverTimezone=UTC&characterEncoding=utf-8
-    password: root
+    url: jdbc:mysql://node0011:3306/logs_static_result?serverTimezone=UTC&characterEncoding=utf-8
+    password: password
     username: root
 
 #配置mybatis信息

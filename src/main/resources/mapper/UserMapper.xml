@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.neu.mapper.UserMapper">
+    <select id="getOldUserNewUserVar" resultType="cn.edu.neu.vo.OldUserNewUserVar">
+        select
+          DATE_FORMAT(createtime, '%Y-%m-%d') DATE,
+          t4.oldUser oldUser,
+          t4.newUser newUser
+        from
+          num_table
+          join
+            (select
+              t2.num,
+              t2.oldUser,
+              t3.newUser
+            from
+              (SELECT DISTINCT
+                old_user.num,
+                IFNULL(t1.count, 0) oldUser
+              FROM
+                old_user
+                LEFT JOIN
+                  (SELECT
+                    num,
+                    COUNT(1) COUNT
+                  FROM
+                    old_user
+                  WHERE isOldUser = 1
+                  GROUP BY num) t1
+                  ON old_user.num = t1.num) t2
+              join
+                (SELECT DISTINCT
+                  old_user.num,
+                  IFNULL(t1.count, 0) newUser
+                FROM
+                  old_user
+                  LEFT JOIN
+                    (SELECT
+                      num,
+                      COUNT(1) COUNT
+                    FROM
+                      old_user
+                    WHERE isOldUser = 0
+                    GROUP BY num) t1
+                    ON old_user.num = t1.num) t3
+                on t2.num = t3.num) t4
+            on num_table.id = t4.num
+    </select>
+</mapper>
