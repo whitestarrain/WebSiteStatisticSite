@@ -13,6 +13,6 @@ import java.util.List;
 @Mapper
 @Repository
 public interface StatusMapper {
-    @Select("SELECT * FROM STATUS WHERE num = (SELECT MAX(id) FROM num_table)")
+    @Select("SELECT * FROM status WHERE num = (SELECT MAX(id) FROM num_table)")
     public List<StatusCounts> getStatusCount();
 }
