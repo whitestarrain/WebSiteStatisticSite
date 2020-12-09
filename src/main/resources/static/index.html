@@ -68,14 +68,11 @@
 							menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
+                    <li><a href="javascript:toRequestStatus()">请求情况统计</a></li>
+                    <li><a href="javascript:toUserStatus()">用户情况统计</a></li>
                     <li><a href="javascript:toAgentPie()">浏览器类型统计</a></li>
                     <li><a href="javascript:toRegionMap()">访问地区分布</a></li>
                     <li><a href="javascript:toFlowMap()">流量分布</a></li>
-                    <li><a href="javascript:toOldUserPie()">老用户比例</a></li>
-                    <li><a href="javascript:toReferCount()">refer统计</a></li>
-                    <li><a href="javascript:toRequestCount()">请求方式</a></li>
-                    <li><a href="javascript:toStatusCount()">返回状态</a></li>
-                    <li><a href="javascript:toUserVisitor()">用户游客统计</a></li>
                 </ul>
             </dd>
         </dl>
@@ -93,7 +90,7 @@
     </div>
 </aside>
 <div id="framediv" style="height: 730px;width: 86%;position: relative;left: 14%;overflow: hidden;">
-    <iframe id="rightcontent" src="./agentPie.html" height="100%" width="100%" style="border: none;">
+    <iframe id="rightcontent" src="./RequestStatus.html" height="100%" width="100%" style="border: none;">
 
     </iframe>
 </div>

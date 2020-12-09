@@ -17,37 +17,22 @@ function toOldUserPie() {
 }
 
 
-function toReferCount() {
+
+function toRequestStatus() {
     $("#rightcontent").prop({
-        src: "./referCount.html",
+        src: "./RequestStatus.html",
     });
 }
 
 
-function toRequestCount() {
-    $("#rightcontent").prop({
-        src: "./requestCount.html",
-    });
-}
 
-function toStatusCount() {
+function toUserStatus() {
     $("#rightcontent").prop({
-        src: "./statusCount.html",
+        src: "./UserStatistic.html",
     });
 }
 
 
-function toUserVisitor() {
-    $("#rightcontent").prop({
-        src: "./userVisitor.html",
-    });
-}
-
-function toFlowMap() {
-    $("#rightcontent").prop({
-        src: "./flowMap.html",
-    });
-}
 
 function toRequestCountVar() {
     $("#rightcontent").prop({
@@ -58,6 +43,12 @@ function toRequestCountVar() {
 function toOldUserRatio() {
     $("#rightcontent").prop({
         src: "./oldNewUserVar.html",
+    });
+}
+
+function toFlowMap() {
+    $("#rightcontent").prop({
+        src: "./flowMap.html",
     });
 }
 
